@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="pro">
+
+	<select id="selectDataAll" resultType="pack.model.SawonDto">
+		select sawon_no, sawon_name, date_format(sawon_ibsail,'%Y') as sawon_ibsail, buser_name from sawon inner join buser on buser_no=buser_num
+	</select>
+	
+	<select id="countData" resultType="pack.model.CountDto">
+		select buser_name, count(sawon_no) as count from buser left join sawon on buser_no=buser_num group by buser_name
+	</select>
+	
+	<!-- <select id="buserData" resultType="pack.model.BuserDto">
+		select buser_name, sawon_name, sawon_pay from buser inner join sawon on buser_num=buser_no 
+	</select> -->
+</mapper>

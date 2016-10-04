@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="pack" />
+	<!-- 
+	<bean id="my" class="pack.MyProcess">
+		<constructor-arg value="돈 벌고 싶다 제발좀 제발좀여 님아 제발좀여 제바ㅣㄹ좀ㄴ옂ㅂ웁ㅈ아ㅓ우러ㅏ"/>
+	</bean>
+	-->
+</beans>

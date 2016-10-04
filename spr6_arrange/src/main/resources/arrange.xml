@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<!-- 
+	<bean id="mbean" class="pack.MessageImple" scope="singleton"
+	c:name2="안녕하시죠???????"
+	c:year="163"
+	c:myInfo-ref="my"
+	p:spec="자바 줜문과"
+	p:inter-ref="outFileInterImpl"
+	>
+	 -->
+	  <!-- scope 기본(안써주면)은 singleton -->
+		<!-- 생성자 주입 -->
+		<!-- index= 뽑는 순서 -->
+		<!-- 
+		<CONSTRUCTOR-ARG INDEX="1">
+			 <VALUE>홍길동</VALUE>
+		</CONSTRUCTOR-ARG >
+		<CONSTRUCTOR-ARG INDEX="0">
+			 <VALUE>아버지를 아버지라 부르지 몬하고</VALUE>
+		</CONSTRUCTOR-ARG> -->
+		<!-- 
+		<constructor-arg index="0" type="java.lang.String" value="신기해" />
+		<constructor-arg index="1" type="java.lang.String" value="(int)16;" />
+		<constructor-arg index="2" type="int" value="16" />
+		<constructor-arg index="3" type="other.MyInfo" ref="myInfo" />
+		 -->
+		<!-- 쒯터 주입 -->
+		<!-- <property name="spec">
+			<value>스프링 존문과</value>
+		</property>
+		 <property name="inter">
+			 <ref bean="outFileInterImpl"/>
+		</property>
+	</bean>
+	-->
+	<bean id="myInfo" name="my, your, our" class="other.MyInfo" scope="singleton" />
+	<bean id="outFileInterImpl" class="other.OutFileInterImpl">
+		<property name="filePath" value="c:/work/good.txt" />
+	</bean>
+	
+</beans>
